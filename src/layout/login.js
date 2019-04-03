@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button ,Card, Input} from 'antd';
 import './login.css'
+import {withRouter} from "react-router-dom";
 
 class Login extends React.Component {
     constructor(props){
@@ -13,8 +14,7 @@ class Login extends React.Component {
         }
     }
     dealInput = (e)=>{
-        e.persist()
-        console.log(e);
+        e.persist();
         this.setState(
             {
                 [e.target.id]: e.target.value,
@@ -41,13 +41,14 @@ class Login extends React.Component {
     async regist(){
         console.log(this.$config.host);
         // let data = await this.$http.get(this.$config.host+this.$config.api.schema+"/bd_customer/",{params:{filter:{__s:0}}})
-        let data = await this.$http.get('http://127.0.0.1:5000')
-        console.log(data);
+        // let data = await this.$http.get('http://127.0.0.1:5000')
+        // console.log(data);
+        this.props.history.push('/about')
     }
     render(){
         return (
             <div className="loginBackground">
-                {this.state.isLogin ? ( 
+                {this.state.isLogin ? (
                 < Card className = "loginCard"
                     title={<span style={{color: 'aliceblue',}}>用户登录</span>}
                     extra={<a onClick={()=>{this.setState({isLogin: !(this.state.isLogin)})}}>More</a>}
@@ -73,4 +74,4 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);
