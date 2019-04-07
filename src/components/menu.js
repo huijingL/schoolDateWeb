@@ -1,6 +1,6 @@
 import React from 'react'
 import {Layout, Menu, Icon, Button, Breadcrumb,} from 'antd';
-import {HashRouter as Router, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Show from './show'
 
 const {
