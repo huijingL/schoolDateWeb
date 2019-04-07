@@ -1,23 +1,21 @@
 import React from 'react'
 import {  BrowserRouter as Router,
     Route,
-    Link,
-    Redirect,
-    withRouter} from "react-router-dom";
+    Redirect} from "react-router-dom";
 import About from "../components/about";
-import App from "../App";
 import Login from "../layout/login";
+import Menu from "../components/menu"
 
 function routers() {
     let loginIn = false;
     return (
         <Router>
             <Route exact  path="/" render={()=> (
-                loginIn ? (<Redirect to="Login"/>) : (<Login/>)
+                loginIn ? (<Redirect to="/login"/>) : (<Login/>)
             )}/>
-            <Route path="/Login" component={Login}/>
-            <Route path="/about" component={About}>
-            </Route>
+            <Route path="/login" component={Login}/>
+            <Route path="/about" component={About}/>
+            <Route path="/menu"  component={Menu}/>
         </Router>
     )
 }

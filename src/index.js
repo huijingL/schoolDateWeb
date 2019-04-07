@@ -5,14 +5,17 @@ import 'antd/dist/antd.css';
 import Routers from './router/index';
 import * as serviceWorker from './serviceWorker';
 import config from './config/index';
-import axios from './http/axios'
+import axios from './axios/index';
+import {CookiesProvider} from 'react-cookie';
 
 React.Component.prototype.$config = config;
 React.Component.prototype.$http = axios;
 
 
 ReactDOM.render((
-    <Routers />
+    <CookiesProvider>
+        <Routers/>
+    </CookiesProvider>
 ), document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
