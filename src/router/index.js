@@ -1,5 +1,5 @@
 import React from 'react'
-import {  BrowserRouter as Router,
+import {  HashRouter as Router,
     Route,
     Redirect} from "react-router-dom";
 import About from "../components/about";
@@ -11,7 +11,7 @@ function routers() {
     return (
         <Router>
             <Route exact  path="/" render={()=> (
-                loginIn ? (<Redirect to="/login"/>) : (<Login/>)
+                loginIn ? (<Login/>) : (<Redirect to="/login"/>)
             )}/>
             <Route path="/login" component={Login}/>
             <Route path="/about" component={About}/>
