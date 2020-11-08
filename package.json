@@ -1,18 +1,14 @@
 {
-  "name": "my-react",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "antd": "^3.15.1",
-    "axios": "^0.18.0",
-    "prop-types": "^15.7.2",
-    "qs": "^6.7.0",
-    "react": "^16.8.4",
-    "react-cookie": "^3.1.2",
-    "react-dom": "^16.8.4",
-    "react-router": "^4.4.0",
-    "react-router-dom": "^4.4.0",
-    "react-scripts": "2.1.8"
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,10 +19,16 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
